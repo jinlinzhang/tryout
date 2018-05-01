@@ -44,8 +44,12 @@ function processData(file, input) {
     finalresult.push(result);
     console.log(result);
     }
-    getCommonElements(finalresult);
-    console.log(finalresult);
+    var answer = finalresult.shift().filter(function(v) {
+    return finalresult.every(function(a) {
+        return a.indexOf(v) !== -1;
+        });
+    });
+    console.log(answer);
 }
 
 function removeD(arr){
@@ -53,20 +57,20 @@ function removeD(arr){
     return unique_array;
 }
 
-function getCommonElements(arrs){
-var resArr = [];
-    for (var i = arrs[0].length - 1; i > 0; i--) {
-        for (var j = arrs.length - 1; j > 0; j--) {
-            if (arrs[j].indexOf(arrs[0][i]) == -1) {
-                break;
-            }
-        }
-        if (j === 0) {
-            resArr.push(arrs[0][i]);
-        }
-    }
-    return resArr;
-}
+//function getCommonElements(arrs){
+//var resArr = [];
+//    for (var i = arrs[0].length - 1; i > 0; i--) {
+//        for (var j = arrs.length - 1; j > 0; j--) {
+//            if (arrs[j].indexOf(arrs[0][i]) == -1) {
+//                break;
+//            }
+//        }
+//        if (j === 0) {
+//            resArr.push(arrs[0][i]);
+//        }
+//    }
+//    return resArr;
+//}
 
 </script>
 </body>
