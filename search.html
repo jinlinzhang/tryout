@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+
+<h2>My First JavaScript</h2>
+
+
+
+<p id="demo"></p>
+
+
+<script>
+var file = "species.csv";
+var input = "Moose";
+
+$(document).ready(function() {
+    console.log("finalresult8888");
+    $.ajax({
+        type: "POST",
+        url: "species.csv",
+        dataType: "text",
+        success: function(data) {processData(data, input);}
+     });
+});
+
+function processData(file, input) {
+    var finalresult = [];
+    var allTextLines = allText.split(/\r\n|\n/);
+
+    for (var x = 0; x < input.length; x++){
+        var temp = arr[x];
+        var result = [];
+        for (var i=1; i<allTextLines.length; i++) {
+            var data = allTextLines[i].split(',');
+            if (data.includes(temp)) {
+                result.push(data.substr(0,4));
+            }
+        }
+    removeD(result);
+    finalresult.push(result);
+    }
+    getCommonElements(finalresult);
+    console.log(finalresult);
+}
+
+function removeD(arr){
+    let unique_array = Array.from(new Set(arr));
+    return unique_array;
+}
+
+function getCommonElements(arrs){
+var resArr = [];
+    for (var i = arrs[0].length - 1; i > 0; i--) {
+        for (var j = arrs.length - 1; j > 0; j--) {
+            if (arrs[j].indexOf(arrs[0][i]) == -1) {
+                break;
+            }
+        }
+        if (j === 0) {
+            resArr.push(arrs[0][i]);
+        }
+    }
+    return resArr;
+}
+
+</script>
+</body>
+</html>
