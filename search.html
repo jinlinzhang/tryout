@@ -14,7 +14,7 @@
 
 <script>
 var file = "species.csv";
-var input = ["Moose"];
+var input = ["Moose", "Bear"];
 
 $(document).ready(function() {
     console.log("finalresult8888");
@@ -32,11 +32,9 @@ function processData(file, input) {
 
     for (var x = 0; x < input.length; x++){
         var temp = input[x];
-        console.log(temp);
         var result = [];
         for (var i=1; i<allTextLines.length; i++) {
             var data = allTextLines[i].split(',');
-            console.log(data);
             if (data.includes(temp)) {
                 result.push(data[0].substr(0,4));
             }
