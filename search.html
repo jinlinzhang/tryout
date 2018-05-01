@@ -19,7 +19,7 @@ var input = "Moose";
 $(document).ready(function() {
     console.log("finalresult8888");
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "species.csv",
         dataType: "text",
         success: function(data) {processData(data, input);}
