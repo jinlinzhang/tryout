@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 function processData(file, input) {
     var finalresult = [];
-    var allTextLines = allText.split(/\r\n|\n/);
+    var allTextLines = file.split(/\r\n|\n/);
 
     for (var x = 0; x < input.length; x++){
         var temp = arr[x];
