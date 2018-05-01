@@ -38,7 +38,7 @@ function processData(file, input) {
             var data = allTextLines[i].split(',');
             console.log(data);
             if (data.includes(temp)) {
-                result.push(data.substr(0,4));
+                result.push(data[0].substr(0,4));
             }
         }
     removeD(result);
