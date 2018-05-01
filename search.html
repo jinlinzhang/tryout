@@ -31,7 +31,7 @@ function processData(file, input) {
     var allTextLines = file.split(/\r\n|\n/);
 
     for (var x = 0; x < input.length; x++){
-        var temp = arr[x];
+        var temp = input[x];
         var result = [];
         for (var i=1; i<allTextLines.length; i++) {
             var data = allTextLines[i].split(',');
